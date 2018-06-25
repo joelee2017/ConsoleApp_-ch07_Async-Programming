@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumThreadsForPID", "ConsoleApp_美學ch07_Async Programming\EnumThreadsForPID.csproj", "{675F6679-758A-48E4-8492-8CEEA8524EDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Write51To100", "Write51To100\Write51To100.csproj", "{112958C4-93CE-40EC-A6C0-9D18459C7DAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "多執行緒的啟動", "多執行緒的啟動\多執行緒的啟動.csproj", "{215C1CAB-BE29-4FCB-9433-74F583D2411E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "長時間作業執行緒", "長時間作業執行緒\長時間作業執行緒.csproj", "{22B07143-A6E5-4B45-855B-0EAE7411548B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskRun", "TaskRun\TaskRun.csproj", "{5A2EF8F9-8506-427C-B878-64E27BA51740}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskDelay", "TaskDelay\TaskDelay.csproj", "{05D971DD-27EA-4602-B2CF-A4FFCF6993F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parallel類別", "Parallel類別\Parallel類別.csproj", "{A4D5EE74-F64D-4E4C-BDA3-A6FF2876AC6B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{675F6679-758A-48E4-8492-8CEEA8524EDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{675F6679-758A-48E4-8492-8CEEA8524EDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{675F6679-758A-48E4-8492-8CEEA8524EDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{675F6679-758A-48E4-8492-8CEEA8524EDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{112958C4-93CE-40EC-A6C0-9D18459C7DAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{112958C4-93CE-40EC-A6C0-9D18459C7DAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{112958C4-93CE-40EC-A6C0-9D18459C7DAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{112958C4-93CE-40EC-A6C0-9D18459C7DAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{215C1CAB-BE29-4FCB-9433-74F583D2411E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{215C1CAB-BE29-4FCB-9433-74F583D2411E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{215C1CAB-BE29-4FCB-9433-74F583D2411E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{215C1CAB-BE29-4FCB-9433-74F583D2411E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22B07143-A6E5-4B45-855B-0EAE7411548B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22B07143-A6E5-4B45-855B-0EAE7411548B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22B07143-A6E5-4B45-855B-0EAE7411548B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22B07143-A6E5-4B45-855B-0EAE7411548B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A2EF8F9-8506-427C-B878-64E27BA51740}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A2EF8F9-8506-427C-B878-64E27BA51740}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A2EF8F9-8506-427C-B878-64E27BA51740}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A2EF8F9-8506-427C-B878-64E27BA51740}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05D971DD-27EA-4602-B2CF-A4FFCF6993F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05D971DD-27EA-4602-B2CF-A4FFCF6993F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05D971DD-27EA-4602-B2CF-A4FFCF6993F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05D971DD-27EA-4602-B2CF-A4FFCF6993F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4D5EE74-F64D-4E4C-BDA3-A6FF2876AC6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4D5EE74-F64D-4E4C-BDA3-A6FF2876AC6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4D5EE74-F64D-4E4C-BDA3-A6FF2876AC6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4D5EE74-F64D-4E4C-BDA3-A6FF2876AC6B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6E421CF9-F225-48A7-A9A8-EC994674E9F4}
+	EndGlobalSection
+EndGlobal
