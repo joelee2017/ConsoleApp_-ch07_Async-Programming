@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -30,8 +31,55 @@ namespace WPF_asyncAndawait關鍵字
         private void Start_Click(object sender, RoutedEventArgs e)
         {
             //AccessUrlForNet4Async();
+            //AccessUrlForNet5Async();
 
-            AccessUrlForNet5Async();
+            AccessUrls();
+        }
+
+        //使用同步方法來撰寫，在等侯被要求的資源下載時，介面執行緒(主執行緒) 的被封鎖。
+        //因此點擊「開始」後，介面無法移動，最大化，最小，甚至無法關閉。
+        private void AccessUrls()
+        {
+            // 注意，此行程式未進行安全性處理
+            string[] urls = InputUrl.Text.Split(',');
+
+            foreach(var url in urls)
+            {
+                byte[] content = GetUrl(url);
+                results.Text +=
+                    string.Format("下載 URL" + url + "字串長度： {0}.\r\n\r\n", content.Length);
+            }
+        }
+
+        private byte[] GetUrl(string url)
+        {
+            // 下載的資源將放置於 MemoryStream 的變數內
+            var content = new MemoryStream();
+
+            // 初始化 HttpWebRequest
+            var webRequest = (HttpWebRequest)WebRequest.Create(url);
+
+            //進行其他的工作
+            DoOtherWork(url);
+
+            //送出要求，等待網路資源回應
+            using (WebResponse response = webRequest.GetResponse())
+            {
+                //取得回應的 stream
+                using (Stream responseStream = response.GetResponseStream())
+                {
+                    // 將回應的資料流複製到 content
+                    responseStream.CopyTo(content);
+                }
+            }
+
+            // 回應 byte array
+            return content.ToArray();
+        }
+
+        private void DoOtherWork(string url)
+        {
+            results.Text += "下載 " + url + " 中...................\r\n";
         }
 
         //改用 C# 5.0  async 與 await
