@@ -5,33 +5,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace 平行處理_加速
+namespace 平行處理_加速改成_async_與__await_的非同步方式
 {
     class Program
     {
         static Stopwatch main_timer = new Stopwatch();
         static void Main(string[] args)
         {
-            //平行處理 加速
-            // 非同步作業的"加速" 可能只是附加效果
-            // 某個需求進行一個費時 4 秒的網路要求，不管是同步作業或是非同步作業處理此要求，都是需要 4 秒來完成
-            main_timer.Start();                
-            for(int i = 0; i < 10; i++)
-            {
-                LongTimeWork1();
-                LongTimeWork2();
-            }
-            main_timer.Stop();
+            //平行處理_加速改成_async_與__await_的非同步方式
+            main_timer.Start();
+            DoWork().Wait();
+
             Console.WriteLine("工作 1 費時：{0} ms", w1_timer.ElapsedMilliseconds);
             Console.WriteLine("工作 2 費時：{0} ms", w2_timer.ElapsedMilliseconds);
             Console.WriteLine("總共費時：{0} ms", main_timer.ElapsedMilliseconds);
 
             Console.ReadLine();
-
         }
 
+
         static Stopwatch w1_timer = new Stopwatch();
-        private static void LongTimeWork1()
+        static  void LongTimeWork1()
         {
             w1_timer.Start();
             // Wait() 等待Task完成
@@ -40,12 +34,28 @@ namespace 平行處理_加速
         }
 
         static Stopwatch w2_timer = new Stopwatch();
-        private static void LongTimeWork2()
+        static async Task LongTimeWork2()
         {
             w2_timer.Start();
             // Wait() 等待Task完成
-            Task.Delay(400).Wait();
+            await Task.Delay(400);
             w2_timer.Stop();
+        }
+
+
+        static async Task DoWork()
+        {
+            Task result = null;
+            for(int i = 0; i < 10; i++)
+            {
+                LongTimeWork1();
+                if(result != null )
+                {
+                    await result;
+                }
+                result = LongTimeWork2();
+            }
+            await result;
         }
     }
 }

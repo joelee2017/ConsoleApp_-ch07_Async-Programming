@@ -18,6 +18,7 @@ namespace TaskRun
             //Task.Run(() => Console.WriteLine("From Task."));
             //Console.ReadLine();
 
+            ////===================================================================
             //Task task = Task.Run(() =>
             //{
             //    Thread.Sleep(2000);
@@ -30,28 +31,31 @@ namespace TaskRun
             //// Task 已完成，回應 True
             //Console.WriteLine(task.IsCompleted);
             //Console.ReadLine();
-
+            ////===================================================================
 
             //Task<int> task = Task.Run(() =>
             //{
             //    Thread.Sleep(2000);
             //    Console.WriteLine("Form Task.");
             //    return 1;
-            //});
+            //});            
 
             ////如果 Task 未完成，封鎖執行緒
             //int result = task.Result;
             //Console.WriteLine(result);
+            //Console.ReadLine();
+            ////====================================================================
 
             //1~5000000 被 3 整除的有幾個
-            //Task<int> task = Task.Run(() =>            
+            //Task<int> task = Task.Run(() =>
             //    Enumerable.Range(1, 5000000).Count(n => (n % 3) == 0));
             //Console.WriteLine("Task 執行中.......");
             //Console.WriteLine("整除 3 的個數有：" + task.Result);
             //Console.ReadLine();
+            ////===================================================================
 
-            // Continuation  作業完成後執行的方法
-            // Task<int> task = Task.Run(() => 
+            ////Continuation 作業完成後執行的方法
+            // Task<int> task = Task.Run(() =>
             //                     Enumerable.Range(1, 5000000).Count(n => (n % 3) == 0));
             // task.ContinueWith(c =>
             //{
@@ -60,19 +64,20 @@ namespace TaskRun
             //});
             // Console.WriteLine("Task 執行中...");
             // Console.ReadLine();
+            ////=====================================================================
 
 
-            // awaiter C# 5.0 非同步功能使用這種方式
-            Task<int> task = Task.Run(
-                () => Enumerable.Range(1, 500000).Count(n => (n % 3) == 0));
-            var awaiter = task.GetAwaiter();
-            awaiter.OnCompleted(() =>
-            {
-                int result = awaiter.GetResult();
-                Console.WriteLine("整除 3 的個數有：" + result);
-            });
-            Console.WriteLine("Task 執行中...");
-            Console.ReadLine();
+            //// awaiter C# 5.0 非同步功能使用這種方式
+            //Task<int> task = Task.Run(
+            //    () => Enumerable.Range(1, 500000).Count(n => (n % 3) == 0));
+            //var awaiter = task.GetAwaiter();
+            //awaiter.OnCompleted(() =>
+            //{
+            //    int result = awaiter.GetResult();
+            //    Console.WriteLine("整除 3 的個數有：" + result);
+            //});
+            //Console.WriteLine("Task 執行中...");
+            //Console.ReadLine();
         }
     }
 }
